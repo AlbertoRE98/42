@@ -15,8 +15,6 @@ void *ft_memcpy(void *dst, const void *src, size_t n)
     temp_source = (const unsigned char *)src;
     
     while (n--)
-    {
         *(temp_destiny++) = *(temp_source++);
-    }
 	return (dst);
 }
