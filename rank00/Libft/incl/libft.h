@@ -21,7 +21,7 @@ int			ft_atoi(const char *ptr);
 long long	ft_atoll(const char *ptr);
 void		*ft_calloc(size_t nmemb, size_t size);
 char		*ft_strdup(const char *s);
-void		*ft_realloc(void *ptr, size_t newsize);
+void		*ft_realloc(void *ptr, size_t old_size, size_t newsize);
 //FUNCTIONS FROM <strings.h>
 void		ft_bzero(void *s, size_t n);
 void		*ft_memccpy(void *dest, const void *src, int c, size_t n);
