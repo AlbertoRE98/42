@@ -2,15 +2,15 @@
 
 #include "libft.h"
 
-int ft_atoi(const char *str)
+long long	ft_atoll(const char *ptr)
 {
-	char		*tmp;
-	int			sign;
-	long int 	res;
+	const char		    *tmp;
+	int			         sign;
+	long long int   	res;
 
 	res = 0;
 	sign = 1;
-	tmp = str;
+	tmp = ptr;
 	if (!tmp)
 		return (0);
 	while (ft_isspace(*tmp) && tmp)
@@ -26,5 +26,5 @@ int ft_atoi(const char *str)
 		res = (res * 10) + (*tmp - '0');
 		tmp++;
 	}
-	return ((int)res * sign);
+	return (res * sign);
 }

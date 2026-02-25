@@ -6,7 +6,7 @@
 #include <unistd.h>
 
 //FUNCTIONS FROM <stdio.h>
-int			ft_putchar(int c);
+void		ft_putchar(int c);
 //FUNCTIONS FROM <ctype.h>
 int			ft_isalnum(int c);
 int			ft_isascii(int c);
