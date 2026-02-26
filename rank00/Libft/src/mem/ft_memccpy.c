@@ -8,6 +8,11 @@ void		*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	size_t				index;
 	unsigned char 		ucaux;
 
+	
+	if (dest == NULL && src == NULL)
+	{
+		return (NULL);
+	}
 	ucaux = (unsigned char)c;
 	aux_dest = (unsigned char *)dest;
 	aux_src = (const unsigned char *)src;
