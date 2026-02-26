@@ -1,0 +1,37 @@
+# Compiled files
+*.o
+*.out
+*.exe
+*.a
+*.so
+*.dll
+
+# Executables
+program
+a.out
+your_program_name
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+
+# Debug files
+*.dSYM/
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
