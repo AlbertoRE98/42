@@ -5,8 +5,7 @@
 char		*ft_strrchr(const char *s, int c)
 {
 	const char *last_spot;
-	if (!s)
-		return (NULL);
+
 	last_spot = NULL;
 	while (*s)
 	{
