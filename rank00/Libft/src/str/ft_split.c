@@ -50,9 +50,9 @@ char		**ft_split(char const *s, char c)
 	size_t	index;
 	size_t	pos;
 
-	pos = 0;
 	if (!s)
 		return (NULL);
+	pos = 0;
 	nwords = ft_count_words(s, c);
 	res = malloc (sizeof (char *) * (nwords + 1));
 	if (!res)
