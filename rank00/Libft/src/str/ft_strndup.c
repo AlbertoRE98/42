@@ -2,15 +2,15 @@
 
 #include "libft.h"
 
-char		*ft_strndup(const char *s, size_t n)
+char	*ft_strndup(const char *s, size_t n)
 {
 	char	*res;
-	size_t  index;
+	size_t	index;
 	size_t	len;
 
 	if (!s)
 		return (NULL);
-	len  = ft_strlen(s);
+	len = ft_strlen(s);
 	if (n > len)
 		res = malloc(sizeof(char) * (len + 1));
 	else

@@ -3,9 +3,9 @@
 #include "libft.h"
 
 
-char		*ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
-	char 		*aux;
+	char		*aux;
 	size_t		len;
 	size_t		index;
 

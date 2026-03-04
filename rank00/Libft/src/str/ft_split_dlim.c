@@ -2,9 +2,9 @@
 
 #include "libft.h"
 
-static int is_delimiter(char c, char const *delimiters)
+static int	is_delimiter(char c, char const *delimiters)
 {
-	size_t i;
+	size_t	i;
 	
 	if (!delimiters)
 		return (0);
@@ -20,10 +20,10 @@ static int is_delimiter(char c, char const *delimiters)
 
 static size_t count_words(char const *s, char const *delimiters)
 {
-	size_t count;
-	size_t i;
-	int    in_word;
-	
+	size_t	count;
+	size_t	i;
+	int		in_word;
+
 	count = 0;
 	i = 0;
 	in_word = 0;
@@ -41,13 +41,13 @@ static size_t count_words(char const *s, char const *delimiters)
 	return (count);
 }
 
-static char *extract_word(char const *s, char const *delimiters, size_t *pos)
+static char	*extract_word(char const *s, char const *delimiters, size_t *pos)
 {
-	char    *res;
-	size_t  start;
-	size_t  end;
-	size_t  i;
-	
+	char	*res;
+	size_t	start;
+	size_t	end;
+	size_t	i;
+
 	while (s[*pos] && is_delimiter(s[*pos], delimiters))
 		(*pos)++;
 	start = *pos;
@@ -68,10 +68,10 @@ static char *extract_word(char const *s, char const *delimiters, size_t *pos)
 	return (res);
 }
 
-static void free_memory(char **res, size_t count)
+static void	free_memory(char **res, size_t count)
 {
-	size_t i;
-	
+	size_t	i;
+
 	i = 0;
 	while (i < count)
 	{
@@ -81,12 +81,12 @@ static void free_memory(char **res, size_t count)
 	free(res);
 }
 
-char **ft_split_dlim(char const *s, char const *delimiters)
+char	**ft_split_dlim(char const *s, char const *delimiters)
 {
-	char    **res;
-	size_t  nwords;
-	size_t  position;
-	size_t  index;
+	char	**res;
+	size_t	nwords;
+	size_t	position;
+	size_t	index;
 
 	if (!s || !delimiters)
 		return (NULL);

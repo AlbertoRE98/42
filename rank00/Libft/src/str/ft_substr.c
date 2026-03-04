@@ -2,8 +2,6 @@
 
 #include "libft.h"
 
-#include "libft.h"
-
 static size_t	calculate_len(size_t s_len, unsigned int start, size_t len)
 {
 	if (start >= s_len)

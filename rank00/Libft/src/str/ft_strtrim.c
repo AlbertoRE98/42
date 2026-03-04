@@ -13,7 +13,6 @@ static	int char_in_set(char c, const char *set)
 	return (0);
 }
 
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*res;
@@ -23,14 +22,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!s1 || !set)
 		return (NULL);
 	start = 0;
-	while (s1[start] && char_in_set(s1[start],set))
+	while (s1[start] && char_in_set(s1[start], set))
 		start++;
 	end = ft_strlen(s1);
-	while (end > start && char_in_set(s1[end - 1],set))
+	while (end > start && char_in_set(s1[end - 1], set))
 		end--;
 	res = malloc(sizeof(char) * ((end - start) + 1));
 	if (!res)
 		return (NULL);
 	ft_memcpy(res, s1 + start,end-start);
+	res[end - start] = '\0';
 	return (res);
 }

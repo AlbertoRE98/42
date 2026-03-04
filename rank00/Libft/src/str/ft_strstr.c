@@ -2,7 +2,7 @@
 
 #include "libft.h"
 
-char		*ft_strstr(const char *big, const char *little)
+char	*ft_strstr(const char *big, const char *little)
 {
 	size_t	index;
 	size_t	index_litle;
@@ -11,7 +11,7 @@ char		*ft_strstr(const char *big, const char *little)
 	if (!*little)
 		return ((char *)big);
 	while (big[index])
-	{	
+	{
 		index_litle = 0;
 		while (big[index + index_litle] == little [index_litle])
 		{

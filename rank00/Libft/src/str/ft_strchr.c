@@ -2,10 +2,10 @@
 
 #include "libft.h"
 
-char		*ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	const char *aux;
-	char charc;
+	const char	*aux;
+	char		charc;
 
 	aux = s;
 	charc = c;

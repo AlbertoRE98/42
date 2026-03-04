@@ -3,9 +3,9 @@
 #include "libft.h"
 
 
-char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char    		*res;
+	char			*res;
 	unsigned int	tam_string;
 	unsigned int	index;
 
