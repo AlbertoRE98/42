@@ -8,9 +8,9 @@ static int is_sep(char c, const char delimit)
 		return (1);
 	return (0);
 }
-int ft_count_words(char const *str, const char delim)
+size_t ft_count_words(char const *str, const char delim)
 {
-	int counter;
+	size_t counter;
 	int inside_word;
 	int index;
 
