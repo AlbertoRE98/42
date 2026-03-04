@@ -50,6 +50,7 @@ char		**ft_split(char const *s, char c)
 	size_t	index;
 	size_t	pos;
 
+	pos = 0;
 	if (!s)
 		return (NULL);
 	nwords = ft_count_words(s, c);
