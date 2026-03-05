@@ -2,18 +2,16 @@
 
 #include "libft.h"
 
-long long	ft_atoll(const char *ptr)
+int ft_atoi(const char *str)
 {
-	const char		    *tmp;
-	int			         sign;
-	long long int   	res;
+	char		*tmp;
+	int			sign;
+	long int 	res;
 
 	res = 0;
 	sign = 1;
-	tmp = ptr;
-	if (!tmp)
-		return (0);
-	while (*tmp && ft_isspace(*tmp))
+	tmp = str;
+	while (ft_isspace(*tmp) && tmp)
 		tmp++;
 	if (*tmp == '-' || *tmp == '+')
 	{	
@@ -26,5 +24,5 @@ long long	ft_atoll(const char *ptr)
 		res = (res * 10) + (*tmp - '0');
 		tmp++;
 	}
-	return (res * sign);
+	return ((int)res * sign);
 }

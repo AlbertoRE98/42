@@ -30,7 +30,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	res = malloc(sizeof(char) * ((end - start) + 1));
 	if (!res)
 		return (NULL);
-	ft_memcpy(res, s1 + start, end-start);
+	ft_memcpy(res, s1 + start,end-start);
 	res[end - start] = '\0';
 	return (res);
 }

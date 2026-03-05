@@ -33,7 +33,7 @@ static char *itoahelper(char *res, long int nb)
 	int	power;
 
 	index = 0;
-	power = ten_power(nb);
+	power = fpower(nb);
 	if (nb < 0)
 	{
 		res[index] = '-';

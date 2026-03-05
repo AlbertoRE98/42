@@ -4,5 +4,7 @@
 
 void	ft_putchar(int c)
 {
-	write(1, &c, 1);
+	char	character;
+	character = (char)c;
+	write(1, &character, 1);
 }

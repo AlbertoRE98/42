@@ -13,7 +13,7 @@ long long	ft_atoll(const char *ptr)
 	tmp = ptr;
 	if (!tmp)
 		return (0);
-	while (*tmp && ft_isspace(*tmp))
+	while (ft_isspace(*tmp) && tmp)
 		tmp++;
 	if (*tmp == '-' || *tmp == '+')
 	{	

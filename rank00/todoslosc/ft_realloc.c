@@ -14,7 +14,7 @@ void	*ft_realloc(void *ptr, size_t old_size, size_t newsize)
 		return (NULL);
 	}
 	newptr = malloc(newsize);
-	if (!newptr)
+	if(!newptr)
 		return (NULL);
 	if (old_size < newsize)
 	{
