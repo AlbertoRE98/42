@@ -33,7 +33,7 @@ static char *itoahelper(char *res, long int nb)
 	int	power;
 
 	index = 0;
-	power = fpower(nb);
+	power = ten_power(nb);
 	if (nb < 0)
 	{
 		res[index] = '-';
@@ -50,18 +50,20 @@ static char *itoahelper(char *res, long int nb)
 	res[index] = '\0';
 	return (res);
 }
-char		*ft_itoa(int n)
+char *ft_itoa(int n)
 {
 	char *res;
-	int	number_digits;
+	int number_digits;
 	long int nb;
 
-    if (n == 0)
-        return (ft_strdup("0"));
+	if (n == 0)
+	{
+		return (ft_strdup("0"));
+	}
 	number_digits = nbr_digits(n);
 	if (n < 0)
 		number_digits++;
-	res = malloc (sizeof(char) * (number_digits + 1));
+	res = malloc(sizeof(char) * (number_digits + 1));
 	if (!res)
 		return (NULL);
 	nb = n;

@@ -56,8 +56,10 @@ char		*ft_itoa(int n)
 	int	number_digits;
 	long int nb;
 
-    if (n == 0)
-        return (ft_strdup("0"));
+	if (n == 0)
+	{
+		return (ft_strdup("0"));
+	}
 	number_digits = nbr_digits(n);
 	if (n < 0)
 		number_digits++;

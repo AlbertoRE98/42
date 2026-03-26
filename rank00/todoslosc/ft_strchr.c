@@ -7,8 +7,6 @@ char	*ft_strchr(const char *s, int c)
 	const char	*aux;
 	char		charc;
 
-	if (!s)
-		return (NULL);
 	aux = s;
 	charc = c;
 	while (*aux)

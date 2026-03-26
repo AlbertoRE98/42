@@ -1,20 +1,19 @@
 
-
 #include "libft.h"
 
 int ft_atoi(const char *str)
 {
-	char		*tmp;
-	int			sign;
-	long int 	res;
+	const char *tmp;
+	int sign;
+	long int res;
 
 	res = 0;
 	sign = 1;
 	tmp = str;
-	while (ft_isspace(*tmp) && tmp)
+	while (*tmp && ft_isspace(*tmp))
 		tmp++;
 	if (*tmp == '-' || *tmp == '+')
-	{	
+	{
 		if (*tmp == '-')
 			sign *= -1;
 		tmp++;

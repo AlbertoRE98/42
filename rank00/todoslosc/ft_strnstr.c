@@ -8,8 +8,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	index_litle;
 
 	index = 0;
-	if (!big || !little)
-		return (NULL);
 	if (!*little)
 		return ((char *)big);
 	while (big[index] && index < len)
