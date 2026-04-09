@@ -6,7 +6,7 @@
 /*   By: aramos-e <aramos-e@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 12:54:07 by aramos-e          #+#    #+#             */
-/*   Updated: 2026/04/07 12:55:48 by aramos-e         ###   ########.fr       */
+/*   Updated: 2026/04/09 09:57:46 by aramos-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ static int	is_sep(char c, const char delimit)
 	return (0);
 }
 
-size_t	ft_count_words(char const *str, const char delim)
+int	ft_count_words(char const *str, const char delim)
 {
-	size_t	counter;
+	int		counter;
 	int		inside_word;
 	int		index;
 

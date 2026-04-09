@@ -1,4 +1,14 @@
-
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: aramos-e <aramos-e@student.42malaga.com>   +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/04/09 10:01:12 by aramos-e          #+#    #+#              #
+#    Updated: 2026/04/09 10:08:10 by aramos-e         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 NAME		= libft.a
 CC			= cc
@@ -12,6 +22,7 @@ SRCS		= ft_isalpha.c \
 			  ft_isascii.c \
 			  ft_isprint.c \
 			  ft_strlen.c \
+			  ft_isspace.c \
 			  ft_memset.c \
 			  ft_bzero.c \
 			  ft_memcpy.c \
@@ -23,6 +34,7 @@ SRCS		= ft_isalpha.c \
 			  ft_strchr.c \
 			  ft_strrchr.c \
 			  ft_strncmp.c \
+			  ft_count_words.c \
 			  ft_memchr.c \
 			  ft_memcmp.c \
 			  ft_strnstr.c \
@@ -39,12 +51,8 @@ SRCS		= ft_isalpha.c \
 			  ft_putchar_fd.c \
 			  ft_putstr_fd.c \
 			  ft_putendl_fd.c \
-			  ft_putnbr_fd.c
-
-# Object files
-OBJS		= $(SRCS:.c=.o)
-
-SRCS_BONUS	= ft_lstnew.c \
+			  ft_putnbr_fd.c \
+				ft_lstnew.c \
 			  ft_lstadd_front.c \
 			  ft_lstsize.c \
 			  ft_lstlast.c \
@@ -54,7 +62,8 @@ SRCS_BONUS	= ft_lstnew.c \
 			  ft_lstiter.c \
 			  ft_lstmap.c
 
-OBJS_BONUS	= $(SRCS_BONUS:.c=.o)
+# Object files
+OBJS		= $(SRCS:.c=.o)
 
 all: $(NAME)
 
