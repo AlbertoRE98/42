@@ -14,13 +14,13 @@
 # define FT_PRINTF_H
 
 # include <unistd.h>
-# include <varargs.h>
 # include <stdlib.h>
+# include <stdarg.h>
 
 /*
 FUNCION PRINCIPAL NECESARIA
 */
-int	ft_printf(char const *,...);
+int	ft_printf(char const *, ...);
 
 /*
 FUNCIONES DE UTILIDAD PARA ESCRITURA
@@ -40,6 +40,5 @@ int	ft_print_di(va_list *args);
 int	ft_print_u(va_list *args);
 int	ft_print_hex(va_list *args);
 int	ft_print_ptr(va_list *args);
-
 
 #endif

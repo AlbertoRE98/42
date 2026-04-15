@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aramos-e <aramos-e@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/10 21:18:11 by marvin            #+#    #+#             */
-/*   Updated: 2026/04/10 21:18:11 by marvin           ###   ########.fr       */
+/*   Created: 2026/04/10 21:25:11 by marvin            #+#    #+#             */
+/*   Updated: 2026/04/10 21:27:02 by aramos-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
 
-int	ft_printf(char const *,...)
+int	ft_printf(char const *, ...)
 {
 
 }
