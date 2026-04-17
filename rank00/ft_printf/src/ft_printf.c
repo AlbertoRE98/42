@@ -46,14 +46,13 @@ static int	ft_dispatch(char c, va_list *args)
 	return (0);
 }
 
-static int ft_parse(const char *format, va_list *args)
+static int	ft_parse(const char *format, va_list *args)
 {
 	int	index;
 	int	count;
 
 	index = 0;
 	count = 0;
-
 	while (format[index])
 	{
 		if (format[index] == '%')
@@ -64,4 +63,3 @@ static int ft_parse(const char *format, va_list *args)
 		index++;
 	}
 }
-

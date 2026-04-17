@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-int ft_print_ptr(va_list *args)
+int	ft_print_ptr(va_list *args)
 {
 	void	*ptr;
 	int		count;
