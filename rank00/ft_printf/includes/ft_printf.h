@@ -20,7 +20,7 @@
 /*
 FUNCION PRINCIPAL NECESARIA
 */
-int	ft_printf(char const *, ...);
+int	ft_printf(char const *format, ...);
 
 /*
 FUNCIONES DE UTILIDAD PARA ESCRITURA
@@ -38,7 +38,7 @@ int	ft_print_char(va_list *args);
 int	ft_print_str(va_list *args);
 int	ft_print_di(va_list *args);
 int	ft_print_u(va_list *args);
-int	ft_print_hex(va_list *args);
+int	ft_print_hex(va_list *args, int uppercase);
 int	ft_print_ptr(va_list *args);
 
 #endif

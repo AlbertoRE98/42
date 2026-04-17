@@ -23,6 +23,11 @@ int	ft_putstr(char *str)
 	int	index;
 
 	index = 0;
+	if (!str)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	while (str[index])
 	{
 		ft_putchar(&str[index]);
@@ -38,7 +43,7 @@ int	ft_putnbr_base(unsigned long long nbr, char *base)
 
 	count = 0;
 	base_len = 0;
-	while (base[count])
+	while (base[base_len])
 		base_len++;
 	if (nbr >= base_len)
 		count += ft_putnbr_base(nbr / base_len, base);
