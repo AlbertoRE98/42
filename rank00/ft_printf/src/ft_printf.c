@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/ft_printf.h"
+#include "ft_printf.h"
 
 int	ft_printf(char const *format, ...)
 {
@@ -37,9 +37,9 @@ static int	ft_dispatch(char c, va_list *args)
 		return (ft_print_di(args));
 	if (c == 'u')
 		return (ft_print_u(args));
-	if (c == 'H')
+	if (c == 'X')
 		return (ft_print_hex(args, 1));
-	if (c == 'h')
+	if (c == 'x')
 		return (ft_print_hex(args, 0));
 	if (c == '%')
 		return (ft_putchar('%'));
@@ -60,6 +60,9 @@ static int	ft_parse(const char *format, va_list *args)
 			index++;
 			count += ft_dispatch(format[index], args);
 		}
+		else
+			count += ft_putchar(format[index]);
 		index++;
 	}
+	return (count);
 }

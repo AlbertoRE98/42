@@ -20,8 +20,8 @@ int	ft_print_ptr(va_list *args)
 	ptr = va_arg(*args, void *);
 	if (!ptr)
 	{
-		write(1, "(nill)", 6);
-		count += 6;
+		write(1, "(nil)", 5);
+		count += 5;
 		return (count);
 	}
 	count = 0;

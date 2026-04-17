@@ -30,7 +30,7 @@ int	ft_putstr(char *str)
 	}
 	while (str[index])
 	{
-		ft_putchar(&str[index]);
+		ft_putchar(str[index]);
 		index++;
 	}
 	return (index);
