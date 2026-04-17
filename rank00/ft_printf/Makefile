@@ -4,12 +4,14 @@ CFLAGS = -Wall -Werror -Wextra
 AR = ar rcs
 RM = rm -f
 
-SRCS =	ft_printf.c \
-		ft_utils.c \
-		ft_convert_cs.c \
-        ft_print_numbers.c \
-		ft_print_p.c
-OBJS = $(SRCS: .c=.o)
+SRC_DIR     = src
+OBJ_DIR     = obj
+
+SRCS_FILES  = ft_printf.c ft_utils.c ft_convert_cs.c \
+              ft_print_numbers.c ft_print_p.c
+SRCS        = $(addprefix $(SRC_DIR)/, $(SRCS_FILES))
+
+OBJS        = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 all: $(NAME)
 $(NAME): $(OBJS)
