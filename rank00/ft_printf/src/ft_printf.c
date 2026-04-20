@@ -6,24 +6,11 @@
 /*   By: aramos-e <aramos-e@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/10 21:25:11 by marvin            #+#    #+#             */
-/*   Updated: 2026/04/10 21:27:02 by aramos-e         ###   ########.fr       */
+/*   Updated: 2026/04/20 11:04:03 by aramos-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int	ft_printf(char const *format, ...)
-{
-	va_list	args;
-	int		count;
-
-	if (!format)
-		return (-1);
-	va_start(args, format);
-	count = ft_parse(format, &args);
-	va_end(args);
-	return (count);
-}
 
 static int	ft_dispatch(char c, va_list *args)
 {
@@ -64,5 +51,18 @@ static int	ft_parse(const char *format, va_list *args)
 			count += ft_putchar(format[index]);
 		index++;
 	}
+	return (count);
+}
+
+int	ft_printf(char const *format, ...)
+{
+	va_list	args;
+	int		count;
+
+	if (!format)
+		return (-1);
+	va_start(args, format);
+	count = ft_parse(format, &args);
+	va_end(args);
 	return (count);
 }

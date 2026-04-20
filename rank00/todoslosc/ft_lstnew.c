@@ -6,7 +6,7 @@
 /*   By: aramos-e <aramos-e@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 13:01:32 by aramos-e          #+#    #+#             */
-/*   Updated: 2026/04/07 13:01:36 by aramos-e         ###   ########.fr       */
+/*   Updated: 2026/04/20 14:32:11 by aramos-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*ptr_list;
 
-	if (!content)
-		return (NULL);
 	ptr_list = malloc(sizeof(t_list));
 	if (!ptr_list)
 		return (NULL);

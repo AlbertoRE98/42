@@ -6,7 +6,7 @@
 /*   By: aramos-e <aramos-e@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 13:02:51 by aramos-e          #+#    #+#             */
-/*   Updated: 2026/04/07 13:03:05 by aramos-e         ###   ########.fr       */
+/*   Updated: 2026/04/20 14:30:41 by aramos-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	uc = c;
 	aux_str = (unsigned char *)s;
-	if (!s)
-		return (NULL);
 	while (n > 0)
 	{
 		if (*aux_str == uc)
