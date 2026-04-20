@@ -6,7 +6,7 @@
 /*   By: aramos-e <aramos-e@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 09:25:52 by aramos-e          #+#    #+#             */
-/*   Updated: 2026/04/09 09:25:54 by aramos-e         ###   ########.fr       */
+/*   Updated: 2026/04/20 16:19:50 by aramos-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char		*ft_itoa(int n);
 int			ft_count_words(char const *str, const char delim);
 
 /* Output functions */
-int			ft_putchar(int c);
+void		ft_putchar(int c);
 int			ft_putstr(char *str);
 int			ft_putnbr(int n);
 void		ft_putchar_fd(char c, int fd);
