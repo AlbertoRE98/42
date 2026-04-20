@@ -1,11 +1,21 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split_dlim.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aramos-e <aramos-e@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/07 13:08:44 by aramos-e          #+#    #+#             */
+/*   Updated: 2026/04/07 13:08:57 by aramos-e         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
 static int	is_delimiter(char c, char const *delimiters)
 {
 	size_t	i;
-	
+
 	if (!delimiters)
 		return (0);
 	i = 0;
@@ -18,7 +28,7 @@ static int	is_delimiter(char c, char const *delimiters)
 	return (0);
 }
 
-static size_t count_words(char const *s, char const *delimiters)
+static size_t	count_words(char const *s, char const *delimiters)
 {
 	size_t	count;
 	size_t	i;

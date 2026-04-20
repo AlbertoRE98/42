@@ -1,8 +1,18 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aramos-e <aramos-e@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/07 13:13:45 by aramos-e          #+#    #+#             */
+/*   Updated: 2026/04/07 13:14:03 by aramos-e         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-static	int char_in_set(char c, const char *set)
+static	int	char_in_set(char c, const char *set)
 {
 	while (*set)
 	{
@@ -30,7 +40,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	res = malloc(sizeof(char) * ((end - start) + 1));
 	if (!res)
 		return (NULL);
-	ft_memcpy(res, s1 + start, end-start);
+	ft_memcpy(res, s1 + start, end - start);
 	res[end - start] = '\0';
 	return (res);
 }

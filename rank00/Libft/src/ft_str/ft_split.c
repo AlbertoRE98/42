@@ -1,21 +1,29 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aramos-e <aramos-e@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/07 13:09:06 by aramos-e          #+#    #+#             */
+/*   Updated: 2026/04/07 13:10:43 by aramos-e         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-static char *extract_word(const char *s, char c, size_t *pos)
+static char	*extract_word(const char *s, char c, size_t *pos)
 {
-	char    *res;
-	size_t  start;
-	size_t  end;
-	size_t  i;
-	
+	char	*res;
+	size_t	start;
+	size_t	end;
+	size_t	i;
+
 	while (s[*pos] && s[*pos] == c)
 		(*pos)++;
-	
 	start = *pos;
 	while (s[*pos] && s[*pos] != c)
 		(*pos)++;
-	
 	end = *pos;
 	res = malloc(sizeof(char) * (end - start + 1));
 	if (!res)
@@ -31,22 +39,23 @@ static char *extract_word(const char *s, char c, size_t *pos)
 	return (res);
 }
 
-static void free_memory(char **res, size_t count)
+static void	free_memory(char **res, size_t count)
 {
-    size_t i;
-    
-    i = 0;
-    while (i < count)
-    {
-        free(res[i]);
-        i++;
-    }
-    free(res);
+	size_t	i;
+
+	i = 0;
+	while (i < count)
+	{
+		free(res[i]);
+		i++;
+	}
+	free(res);
 }
-char		**ft_split(char const *s, char c)
+
+char	**ft_split(char const *s, char c)
 {
-	char    **res;
-	size_t  nwords;
+	char	**res;
+	size_t	nwords;
 	size_t	index;
 	size_t	pos;
 
@@ -60,10 +69,10 @@ char		**ft_split(char const *s, char c)
 	index = 0;
 	while (index < nwords)
 	{
-		res[index] = extract_word(s,c,&pos);
+		res[index] = extract_word(s, c, &pos);
 		if (!res[index])
 		{
-			free_memory(res,index);
+			free_memory(res, index);
 			return (NULL);
 		}
 		index++;

@@ -1,11 +1,21 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aramos-e <aramos-e@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/07 13:03:11 by aramos-e          #+#    #+#             */
+/*   Updated: 2026/04/07 13:03:41 by aramos-e         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const unsigned char *aux_s1;
-	const unsigned char *aux_s2;
+	const unsigned char	*aux_s1;
+	const unsigned char	*aux_s2;
 	size_t				counter;
 
 	aux_s1 = (const unsigned char *)s1;
