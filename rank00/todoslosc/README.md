@@ -4,18 +4,6 @@
 ## 📝 Descripción
 Este proyecto consiste en crear una librería en **C** que contiene una serie de funciones de propósito general. El objetivo es comprender el funcionamiento interno de las funciones estándar de C, implementarlas desde cero y construir una base sólida para los próximos proyectos del cursus.
 
----
-
-## 🏗️ La Librería: Detalles Técnicos
-
-La librería `libft.a` se genera en la raíz del repositorio utilizando el comando `ar`. El contenido se divide en tres bloques estratégicos:
-
-* **Funciones de libc (Parte 1):** Reimplementaciones de funciones estándar con el prefijo `ft_` (como `ft_strlen`, `ft_memset`, `ft_atoi`) que siguen fielmente las definiciones del `man`.
-* **Funciones Adicionales (Parte 2):** Funciones que no pertenecen a la librería estándar o tienen un enfoque distinto, orientadas a la manipulación de strings y escritura en descriptores de archivo (como `ft_substr`, `ft_strjoin`, `ft_split`).
-* **Listas enlazadas (Parte 3):** Funciones para manejar estructuras de datos dinámicas utilizando una estructura de nodos definida en el header.
-
----
-
 ## 🚀 Instrucciones
 
 ### Compilación y Makefile

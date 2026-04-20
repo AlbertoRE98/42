@@ -61,26 +61,6 @@ cc -Wall -Wextra -Werror main.c -L. -lftprintf -o programa
 | `make fclean` | Elimina los `.o` y `libftprintf.a` |
 | `make re` | Recompila todo desde cero |
 
----
-
-## Estructura del proyecto
-
-```
-ft_printf/
-├── Makefile              — compilación y reglas
-├── ft_printf.h           — prototipos, includes
-├── ft_printf.c           — núcleo: ft_printf, ft_parse, ft_dispatch
-├── ft_utils.c            — ft_putchar, ft_putstr, ft_putnbr_base
-├── ft_convert_cs.c       — ft_print_char, ft_print_str
-├── ft_convert_di.c       — ft_print_di (%d, %i)
-├── ft_convert_u.c        — ft_print_u (%u)
-├── ft_convert_hex.c      — ft_print_hex (%x, %X)
-└── ft_convert_p.c        — ft_print_ptr (%p)
-```
-
----
-
-## Decisiones técnicas
 
 ### Arquitectura: dispatcher
 
@@ -186,22 +166,6 @@ ft_printf devuelve 6  (2 dígitos + 1 espacio + 4 letras = 7...
                        con el espacio entre %d y %s son 7 total)
 ```
 
----
-
-## Funciones del sistema utilizadas
-
-**`write(fd, buf, count)`** — Syscall de escritura. Escribe `count` bytes desde `buf`
-en el file descriptor `fd`. Usamos siempre `fd = 1` (stdout). Es la única forma de
-escribir en pantalla sin usar `printf` u otras funciones de la libc prohibidas por
-la Norma.
-
-**`malloc(size)`** — Reserva `size` bytes en el heap y devuelve un puntero al bloque.
-Devuelve `NULL` si no hay memoria disponible. Toda memoria reservada con `malloc`
-debe liberarse con `free`.
-
-**`free(ptr)`** — Libera un bloque de memoria previamente reservado con `malloc`.
-El puntero debe ser exactamente el que devolvió `malloc`. Llamar a `free` dos veces
-con el mismo puntero (double free) es comportamiento indefinido.
 
 ---
 
@@ -211,7 +175,3 @@ con el mismo puntero (double free) es comportamiento indefinido.
 - [`man 3 stdarg`](https://man7.org/linux/man-pages/man3/stdarg.3.html) — Documentación de va_list y macros variádicas
 - [`man 2 write`](https://man7.org/linux/man-pages/man2/write.2.html) — Syscall de escritura
 - [Variadic Functions — cppreference](https://en.cppreference.com/w/c/variadic) — Referencia del estándar C
-
-**Uso de IA:** No se ha utilizado IA para generar el código del proyecto. Se ha empleado
-como herramienta de consulta para comprender conceptos (funciones variádicas, ABI de argumentos, comportamiento de tipos en promoción) y contrastar decisiones de diseño,
-verificando siempre la información con la documentación oficial referenciada arriba.
