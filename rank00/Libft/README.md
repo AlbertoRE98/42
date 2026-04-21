@@ -1,4 +1,3 @@
-
 *Este proyecto ha sido creado como parte del currículo de 42 por <aramos-e>.*
 
 ## 📝 Descripción
@@ -33,3 +32,6 @@ cc main.c -L. -lft
 ### Recursos
 * **Manuales de Sistema (man):** Utilizados para replicar prototipos y comportamientos originales.
 * **Aprendizaje entre pares (Peer Learning):** Intercambio de lógica y resolución de problemas mediante el diálogo constante con otros estudiantes.
+
+### USO DE IA
+Usada para tareas pedagogicas, explicaciones y debug complejo

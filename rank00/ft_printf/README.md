@@ -1,6 +1,3 @@
-```markdown
-# ft_printf
-
 *Este proyecto ha sido creado como parte del currículo de 42 por <aramos-e>.*
 
 ---
@@ -166,7 +163,6 @@ ft_printf devuelve 6  (2 dígitos + 1 espacio + 4 letras = 7...
                        con el espacio entre %d y %s son 7 total)
 ```
 
-
 ---
 
 ## Recursos
@@ -175,3 +171,7 @@ ft_printf devuelve 6  (2 dígitos + 1 espacio + 4 letras = 7...
 - [`man 3 stdarg`](https://man7.org/linux/man-pages/man3/stdarg.3.html) — Documentación de va_list y macros variádicas
 - [`man 2 write`](https://man7.org/linux/man-pages/man2/write.2.html) — Syscall de escritura
 - [Variadic Functions — cppreference](https://en.cppreference.com/w/c/variadic) — Referencia del estándar C
+
+
+### USO DE IA
+Usada para tareas pedagogicas, explicaciones y debug complejo
