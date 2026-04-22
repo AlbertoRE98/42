@@ -27,7 +27,6 @@ cc main.c -L. -lft
 
 ---
 
-## 📖 Recursos y Aprendizaje
 
 ### Recursos
 * **Manuales de Sistema (man):** Utilizados para replicar prototipos y comportamientos originales.

@@ -6,11 +6,18 @@
 /*   By: aramos-e <aramos-e@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 17:04:51 by aramos-e          #+#    #+#             */
-/*   Updated: 2026/04/21 18:38:09 by aramos-e         ###   ########.fr       */
+/*   Updated: 2026/04/22 12:23:58 by aramos-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+static char	*free_and_return(char *buf, char *storage)
+{
+	free(buf);
+	free(storage);
+	return (NULL);
+}
 
 static char	*read_and_store(int fd, char *storage)
 {
@@ -19,21 +26,23 @@ static char	*read_and_store(int fd, char *storage)
 
 	if (!storage)
 		storage = ft_strdup("");
+	if (!storage)
+		return (NULL);
 	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buffer)
-		return (NULL);
+		return (free(storage), NULL);
 	bytes_read = 1;
 	while (bytes_read != 0 && !ft_strchr(storage, '\n'))
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
-		if (bytes_read == -1)
-		{
-			free (buffer);
-			free (storage);
-			return (NULL);
-		}
-		buffer [bytes_read] = '\0';
+		if (bytes_read < 0)
+			return (free_and_return(buffer, storage));
+		if (bytes_read == 0 && ft_strlen(storage) == 0)
+			return (free_and_return(buffer, storage));
+		buffer[bytes_read] = '\0';
 		storage = ft_strjoin(storage, buffer);
+		if (!storage)
+			return (free_and_return(buffer, NULL));
 	}
 	free(buffer);
 	return (storage);
@@ -53,8 +62,6 @@ static char	*extract_line(char *storage)
 		line = ft_substr(storage, 0, i + 1);
 	else
 		line = ft_substr(storage, 0, i);
-	if (!line)
-		return (NULL);
 	return (line);
 }
 
