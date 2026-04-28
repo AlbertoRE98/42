@@ -12,6 +12,21 @@
 
 #include "libft.h"
 
+/**
+ * The function `ft_split_dlim` takes a string and delimiters as input, splits the string into words
+ * based on the delimiters, and returns an array of strings representing the words.
+ *
+ * @param c The `c` parameter in the `is_delimiter` function represents a character that we are
+ * checking to see if it is a delimiter or not. Delimiters are characters that separate words in a
+ * string.
+ * @param delimiters The `delimiters` parameter in the provided code refers to a string containing
+ * characters that are considered as delimiters for splitting the input string `s` into words. These
+ * delimiters are used to determine where one word ends and the next word begins in the input string.
+ *
+ * @return The `ft_split_dlim` function returns a dynamically allocated array of strings (char
+ * pointers) that represent the words extracted from the input string `s` based on the provided
+ * delimiters.
+ */
 static int	is_delimiter(char c, char const *delimiters)
 {
 	size_t	i;
