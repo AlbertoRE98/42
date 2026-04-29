@@ -2,6 +2,7 @@ def input_temperature(temp_str: str) -> int:
     temp = int(temp_str)
     return temp
 
+
 def test_temperature() -> None:
     print("=== Garden Temperature Checker ===")
     test = "25"
@@ -18,6 +19,7 @@ def test_temperature() -> None:
         print(f"Temperature 2: {temp2}°C")
     except Exception as e:
         print(f"An error occurred while converting the temperature: {e}")
+
 
 if __name__ == "__main__":
     test_temperature()
