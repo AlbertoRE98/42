@@ -41,6 +41,6 @@ void		op_ss(t_stack *s);
 void		op_sb(t_stack *s);
 void		op_sa(t_stack *s);
 static void	swap_values(t_node *stack);
-static void	print_operation(const char *op)
+static void	print_operation(const char *op);
 
 #endif
