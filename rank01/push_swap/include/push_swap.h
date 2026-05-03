@@ -1,0 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aramos-e <aramos-e@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/02 18:40:51 by aramos-e          #+#    #+#             */
+/*   Updated: 2026/05/02 18:40:51 by aramos-e         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+# include <unistd.h>
+# include <stdlib.h>
+
+typedef struct s_node
+{
+	int				value;
+	struct s_node	*next;
+}	t_node;
+
+typedef	struct s_stack
+{
+	t_node 	*a;
+	t_node 	*b;
+
+	int		size_a;
+	int		size_b;
+}	t_stack;
+
+t_node *new_node(int value);
+void	stack_push(t_node **stack, int value);
+int		stack_pop(t_node **stack);
+int 	stack_size(t_node *stack);
+int 	stack_peek(t_node *stack);
+
+#endif

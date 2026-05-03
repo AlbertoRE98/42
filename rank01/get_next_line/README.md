@@ -5,7 +5,6 @@
 
 El objetivo de este proyecto es programar una función que devuelva una línea leída desde un descriptor de archivo (file descriptor). Este reto introduce el concepto de **variables estáticas** en C y requiere una gestión de memoria impecable para evitar fugas (memory leaks) y errores de segmentación.
 
-> "Leer una línea de un fd es algo que parece simple, pero hacerlo eficientemente con un tamaño de buffer variable es un excelente ejercicio de lógica."
 
 -----
 
