@@ -30,10 +30,17 @@ typedef	struct s_stack
 	int		size_b;
 }	t_stack;
 
-t_node *new_node(int value);
-void	stack_push(t_node **stack, int value);
-int		stack_pop(t_node **stack);
-int 	stack_size(t_node *stack);
-int 	stack_peek(t_node *stack);
+t_node		*new_node(int value);
+void		stack_push(t_node **stack, int value);
+int			stack_pop(t_node **stack);
+int 		stack_size(t_node *stack);
+int 		stack_peek(t_node *stack);
+void		free_stack(t_node **stack);
+
+void		op_ss(t_stack *s);
+void		op_sb(t_stack *s);
+void		op_sa(t_stack *s);
+static void	swap_values(t_node *stack);
+static void	print_operation(const char *op)
 
 #endif
