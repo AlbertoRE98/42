@@ -1,4 +1,4 @@
-*Este proyecto ha sido creado como parte del currículo de 42 por <aramos-e>.*
+*Este proyecto ha sido creado como parte del currículo de 42 por aramos-e.*
 
 ## 📝 Descripción
 Este proyecto consiste en crear una librería en **C** que contiene una serie de funciones de propósito general. El objetivo es comprender el funcionamiento interno de las funciones estándar de C, implementarlas desde cero y construir una base sólida para los próximos proyectos del cursus.

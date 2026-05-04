@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/aramos-e/42/rank00/todoslosc",
-      "program": "/home/aramos-e/42/rank00/todoslosc/build/Debug/outDebug",
+      "cwd": "/home/aramos-e/42/rank01",
+      "program": "/home/aramos-e/42/rank01/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
