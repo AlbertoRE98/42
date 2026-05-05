@@ -6,7 +6,7 @@
 /*   By: aramos-e <aramos-e@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 14:42:42 by aramos-e          #+#    #+#             */
-/*   Updated: 2026/05/04 13:21:59 by aramos-e         ###   ########.fr       */
+/*   Updated: 2026/05/05 09:33:53 by aramos-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void	swap_values(t_node *stack)
 }
 
 void	op_sa(t_stack *s)
-{	
+{
 	if (!s->a || !s->a->next)
 		return ;
 	swap_values(s->a);
@@ -43,7 +43,7 @@ void	op_sa(t_stack *s)
 }
 
 void	op_sb(t_stack *s)
-{	
+{
 	if (!s->b || !s->b->next)
 		return ;
 	swap_values(s->b);

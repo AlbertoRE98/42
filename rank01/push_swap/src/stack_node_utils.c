@@ -6,7 +6,7 @@
 /*   By: aramos-e <aramos-e@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 18:46:35 by aramos-e          #+#    #+#             */
-/*   Updated: 2026/05/04 13:12:06 by aramos-e         ###   ########.fr       */
+/*   Updated: 2026/05/05 16:39:21 by aramos-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ void	stack_push(t_node **stack, int value)
 
 	node = new_node(value);
 	if (!node)
+	{
+		write(2, "Error memory allocation_push\n", 30);
 		return ;
+	}
 	node->next = *stack;
 	*stack = node;
 }

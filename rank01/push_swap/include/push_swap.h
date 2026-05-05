@@ -6,7 +6,7 @@
 /*   By: aramos-e <aramos-e@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 18:40:51 by aramos-e          #+#    #+#             */
-/*   Updated: 2026/05/04 15:06:58 by aramos-e         ###   ########.fr       */
+/*   Updated: 2026/05/05 11:37:36 by aramos-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ typedef struct s_stack
 
 	int			size_a;
 	int			size_b;
-
 }	t_stack;
 
 t_node		*new_node(int value);
