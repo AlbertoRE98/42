@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   disorder_index.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aramos-e <aramos-e@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: czuluaga <czuluaga@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 13:30:37 by aramos-e          #+#    #+#             */
-/*   Updated: 2026/05/04 15:07:21 by aramos-e         ###   ########.fr       */
+/*   Updated: 2026/05/11 16:46:54 by czuluaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,11 @@ double	compute_disorder_index(t_node *stack)
 		return (0.0);
 	total_pairs = 0;
 	mistakes = 0;
+	outer = stack;
 	while (outer && outer->next)
 	{
 		inner = outer->next;
-		while (inner && inner ->next)
+		while (inner)
 		{
 			total_pairs++;
 			if (outer->value > inner->value)
@@ -48,17 +49,26 @@ static	t_disorder_level	get_disorder_level(double disorder_level)
 		return (DISORDER_HIGH);
 }
 
-void	sort_adaptative(t_node *stack)
+void	sort_adaptative(t_stack *stack, t_bench *bench)
 {
 	float				disorder_level;
 	t_disorder_level	disorder;
 
-	disorder_level = compute_disorder_index(stack);
+	disorder_level = bench->disorder_index;
 	disorder = get_disorder_level(disorder_level);
 	if (disorder == DISORDER_LOW)
-		sort_simple(&stack);
+	{
+		sort_simple(stack, bench);
+		stack->strat |= SIMPLE_STRAT;
+	}
 	else if (disorder == DISORDER_MEDIUM)
-		sort_medium(&stack);
+	{
+		sort_medium(stack, bench);
+		stack->strat |= MEDIUM_STRAT;
+	}
 	else
-		sort_complex(&stack);
+	{
+		sort_complex(stack, bench);
+		stack->strat |= COMPLEX_STRAT;
+	}
 }

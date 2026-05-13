@@ -1,14 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   testeos_operaciones.c                              :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aramos-e <aramos-e@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: czuluaga <czuluaga@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/05 10:16:32 by aramos-e          #+#    #+#             */
-/*   Updated: 2026/05/05 10:16:36 by aramos-e         ###   ########.fr       */
+/*   Created: 2026/03/22 08:47:51 by czuluaga          #+#    #+#             */
+/*   Updated: 2026/04/20 11:24:12 by czuluaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
+/*
+	DESCRIPTION
+	Checks wether the character c is a digit.
+
+	RETURN
+	Nonzero if c falls into the test class, and zero if not.
+*/
+int	ft_isdigit(int c)
+{
+	if (c >= 48 && c <= 57)
+		return (1);
+	return (0);
+}

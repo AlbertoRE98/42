@@ -3,32 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   operations3.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aramos-e <aramos-e@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: czuluaga <czuluaga@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 11:53:02 by aramos-e          #+#    #+#             */
-/*   Updated: 2026/05/04 13:18:27 by aramos-e         ###   ########.fr       */
+/*   Updated: 2026/05/08 10:25:18 by czuluaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rra(t_stack *s)
+void	rra(t_stack *s, t_bench *bench)
 {
 	if (!s->a || !s->a->next)
 		return ;
 	reverse_rotate(&s->a);
-	print_operation("rra");
+	bench->rra_ops += 1;
+	print_operation("rra", s);
 }
 
-void	rrb(t_stack *s)
+void	rrb(t_stack *s, t_bench *bench)
 {
 	if (!s->b || !s->b->next)
 		return ;
 	reverse_rotate(&s->b);
-	print_operation("rrb");
+	bench->rrb_ops += 1;
+	print_operation("rrb", s);
 }
 
-void	rrr(t_stack *s)
+void	rrr(t_stack *s, t_bench *bench)
 {
 	int	rotated_a;
 	int	rotated_b;
@@ -46,6 +48,8 @@ void	rrr(t_stack *s)
 		rotated_b = 1;
 	}
 	if (rotated_a || rotated_b)
-		print_operation("rrr");
+	{
+		print_operation("rrr", s);
+		bench->rrr_ops += 1;
+	}
 }
-

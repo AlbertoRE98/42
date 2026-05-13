@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_node_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aramos-e <aramos-e@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: czuluaga <czuluaga@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 18:46:35 by aramos-e          #+#    #+#             */
-/*   Updated: 2026/05/05 16:39:21 by aramos-e         ###   ########.fr       */
+/*   Updated: 2026/05/08 14:10:44 by czuluaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,36 +20,28 @@ t_node	*new_node(int value)
 	if (!node)
 		return (NULL);
 	node->value = value;
+	node->index = 0;
 	node->next = NULL;
 	return (node);
 }
 
-void	stack_push(t_node **stack, int value)
+void	stack_push(t_node **stack, t_node *node)
 {
-	t_node	*node;
-
-	node = new_node(value);
 	if (!node)
-	{
-		write(2, "Error memory allocation_push\n", 30);
 		return ;
-	}
 	node->next = *stack;
 	*stack = node;
 }
 
-int	stack_pop(t_node **stack)
+t_node	*stack_pop(t_node **stack)
 {
 	t_node	*tmp;
-	int		value;
 
 	if (!*stack)
 		return (0);
 	tmp = *stack;
-	value = tmp->value;
 	*stack = tmp->next;
-	free (tmp);
-	return (value);
+	return (tmp);
 }
 
 int	stack_peek(t_node *stack)

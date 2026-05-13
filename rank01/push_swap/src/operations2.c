@@ -3,60 +3,65 @@
 /*                                                        :::      ::::::::   */
 /*   operations2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aramos-e <aramos-e@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: czuluaga <czuluaga@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 14:57:47 by aramos-e          #+#    #+#             */
-/*   Updated: 2026/05/04 13:28:48 by aramos-e         ###   ########.fr       */
+/*   Updated: 2026/05/08 14:13:38 by czuluaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	op_pa(t_stack *s)
+void	op_pa(t_stack *s, t_bench *bench)
 {
-	int	value;
+	t_node	*pop_node;
 
 	if (!s->b)
 		return ;
-	value = stack_pop(&s->b);
-	stack_push(&s->a, value);
+	pop_node = stack_pop(&s->b);
+	stack_push(&s->a, pop_node);
 	s->size_a++;
 	s->size_b--;
-	print_operation("pa");
+	bench->pa_ops += 1;
+	print_operation("pa", s);
 }
 
-void	op_pb(t_stack *s)
+void	op_pb(t_stack *s, t_bench *bench)
 {
-	int	value;
+	t_node	*pop_node;
 
 	if (!s->a)
 		return ;
-	value = stack_pop(&s->a);
-	stack_push(&s->b, value);
+	pop_node = stack_pop(&s->a);
+	stack_push(&s->b, pop_node);
 	s->size_a--;
 	s->size_b++;
-	print_operation("pb");
+	bench->pb_ops += 1;
+	print_operation("pb", s);
 }
 
-void	ra(t_stack *s)
+void	ra(t_stack *s, t_bench *bench)
 {
 	if (!s->a || !s->a->next)
 		return ;
 	rotate(&s->a);
-	print_operation("ra");
+	bench->ra_ops += 1;
+	print_operation("ra", s);
 }
 
-void	rb(t_stack *s)
+void	rb(t_stack *s, t_bench *bench)
 {
 	if (!s->b || !s->b->next)
 		return ;
 	rotate(&s->b);
-	print_operation("rb");
+	bench->rb_ops += 1;
+	print_operation("rb", s);
 }
 
-void	rr(t_stack *s)
+void	rr(t_stack *s, t_bench *bench)
 {
 	rotate(&s->a);
 	rotate(&s->b);
-	print_operation("rr");
+	bench->rr_ops += 1;
+	print_operation("rr", s);
 }

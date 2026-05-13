@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_simple.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aramos-e <aramos-e@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: czuluaga <czuluaga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/05 09:16:27 by aramos-e          #+#    #+#             */
-/*   Updated: 2026/05/05 11:38:38 by aramos-e         ###   ########.fr       */
+/*   Updated: 2026/05/13 09:33:14 by czuluaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,8 @@ static int	min_value_pos(t_node *stack)
 	int		min_value;
 	int		pos;
 
-	if (!stack)
-		return (-1);
 	current_node = stack;
-	min_pos = -1;
+	min_pos = 0;
 	pos = 0;
 	min_value = current_node->value;
 	while (current_node)
@@ -38,55 +36,79 @@ static int	min_value_pos(t_node *stack)
 	return (min_pos);
 }
 
-static	void	rotate_helper_to_top(t_stack *s, int minimum_pos)
+void	rotate_helper_to_top(t_stack *s, t_bench *bench, int min_pos)
 {
 	int	i;
 	int	size;
 
 	size = s->size_a;
-	if (minimum_pos <= (size / 2))
+	if (min_pos <= (size / 2))
 	{
 		i = 0;
-		while (i < minimum_pos)
+		while (i < min_pos)
 		{
-			ra(s->a);
+			ra(s, bench);
 			i++;
 		}
 	}
 	else
 	{
 		i = 0;
-		while (i < size - minimum_pos)
+		while (i < size - min_pos)
 		{
-			rra(s->a);
+			rra(s, bench);
 			i++;
 		}
 	}
 }
 
-void	sort_simple(t_stack *s)
+void	rotate_helper_to_top_b(t_stack *s, t_bench *bench, int min_pos)
 {
-	int	counter;
-	int	min_pos;
+	int	i;
+	int	size;
 
-	if (!s)
+	size = s->size_b;
+	if (min_pos <= (size / 2))
 	{
-		write(1, "No hay stack creado", 20);
-		return ;
+		i = 0;
+		while (i < min_pos)
+		{
+			rb(s, bench);
+			i++;
+		}
 	}
-	counter = s->size_a;
-	while (counter > 0)
+	else
 	{
-		min_pos = min_value_pos(s->a);
-		rotate_helper_to_top(s, min_pos);
-		op_pb(s);
-		counter--;
-	}
-	counter = s->size_b;
-	while (counter > 0)
-	{
-		op_pa(s);
-		counter--;
+		i = 0;
+		while (i < size - min_pos)
+		{
+			rrb(s, bench);
+			i++;
+		}
 	}
 }
 
+void	sort_simple(t_stack *stack, t_bench *bench)
+{
+	int		counter;
+	int		min_pos;
+
+	if (!stack)
+		return ;
+	if (is_sorted(stack->a))
+		return ;
+	counter = stack->size_a;
+	while (counter > 0)
+	{
+		min_pos = min_value_pos(stack->a);
+		rotate_helper_to_top(stack, bench, min_pos);
+		op_pb(stack, bench);
+		counter--;
+	}
+	counter = stack->size_b;
+	while (counter > 0)
+	{
+		op_pa(stack, bench);
+		counter--;
+	}
+}

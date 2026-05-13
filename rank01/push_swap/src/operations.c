@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aramos-e <aramos-e@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: czuluaga <czuluaga@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 14:42:42 by aramos-e          #+#    #+#             */
-/*   Updated: 2026/05/05 09:33:53 by aramos-e         ###   ########.fr       */
+/*   Updated: 2026/05/08 10:22:07 by czuluaga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_operation(const char *op)
+void	print_operation(const char *op, t_stack *s)
 {
 	int	i;
 
@@ -21,6 +21,7 @@ void	print_operation(const char *op)
 		i++;
 	write(1, op, i);
 	write(1, "\n", 1);
+	s -> total_ops++;
 }
 
 static void	swap_values(t_node *stack)
@@ -34,26 +35,28 @@ static void	swap_values(t_node *stack)
 	stack->next->value = temp;
 }
 
-void	op_sa(t_stack *s)
+void	op_sa(t_stack *s, t_bench *bench)
 {
 	if (!s->a || !s->a->next)
 		return ;
 	swap_values(s->a);
-	print_operation("sa");
+	bench->sa_ops += 1;
+	print_operation("sa", s);
 }
 
-void	op_sb(t_stack *s)
+void	op_sb(t_stack *s, t_bench *bench)
 {
 	if (!s->b || !s->b->next)
 		return ;
 	swap_values(s->b);
-	print_operation("sb");
+	bench->sb_ops += 1;
+	print_operation("sb", s);
 }
 
-void	op_ss(t_stack *s)
+void	op_ss(t_stack *s, t_bench *bench)
 {
 	swap_values(s->a);
 	swap_values(s->b);
-	if (s->a && s->a->next || s->b && s->b->next)
-		print_operation("ss");
+	bench->ss_ops += 1;
+	print_operation("ss", s);
 }

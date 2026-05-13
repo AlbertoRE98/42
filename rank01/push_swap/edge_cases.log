@@ -1,0 +1,27 @@
+OK ./main
+OK ./main a v x rgw
+OK ./main 2 5 62 34 --complex --bench
+OK ./main -simple -bench
+OK ./main -simple --bench
+OK ./main --simple bench
+OK ./main -bench
+OK ./main "--simple --bench 1 2 3 5 323 5"
+OK ./main --bench "    3   52 23          452		 32334242"
+OK ./main "    3   52 23          452		 32334242"
+OK ./main " 452 	-+32334242"
+OK ./main " 452         -+32334242"
+OK ./main " a v 1 6743 62 334 432"
+OK ./main  5 62352 232 222 51 1 --simple
+OK ./main --complex --bench 1 543 3 2 64 77423
+OK ./main --bench --complex 1 543 3 2 64 77423
+OK ./main 1 2 56 3 2 3 0
+OK ./main 1 5 32 23 9999999999999999999999999999999
+OK ./main --simple --bench 1 5 32 23 9999999999999999999999999999999
+OK ARG="4 67 3 87 23"; ./push_swap --adaptive $ARG | wc -l
+OK ARG="4 67 3 87 23"; ./push_swap --simple 5 4 3 2 1
+OK shuf -i 0-9999 -n 500 > args.txt ; ./push_swap $(cat args.txt) | wc -l
+OK shuf -i 0-9999 -n 500 > args.txt ; ./push_swap --bench $(cat args.txt) 2> bench.txt | ./checker_linux $(cat args.txt)
+OK ARG="4 67 3 87 23"; ./push_swap --simple $ARG | ./checker_linux $ARG
+OK ARG="4 67 3 87 23"; ./push_swap --medium $ARG | ./checker_linux $ARG
+OK ARG="4 67 3 87 23"; ./push_swap --complex $ARG | ./checker_linux $ARG
+OK ARG="4 67 3 87 23"; ./push_swap --adaptive $ARG | ./checker_linux $ARG
